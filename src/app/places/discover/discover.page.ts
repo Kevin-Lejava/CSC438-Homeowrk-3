@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { SegmentChangeEventDetail } from '@ionic/core';
 import { PlacesService } from '../places.service';
@@ -8,23 +8,11 @@ import { Place } from '../place.model';
   selector: 'app-discover',
   templateUrl: './discover.page.html',
   styleUrls: ['./discover.page.scss'],
-  styles: [`
-  .sebm-google-map-container {
-     height: 300px;
-   }
-`],
-template: `
-  <sebm-google-map>
-  </sebm-google-map>`
 })
 
 export class DiscoverPage implements OnInit {
   loadedPlaces: Place[];
   theFirstItem: Place[];
-
-  lat = 21.3069;
-  lng = -157.8583;
-  mapType = 'satellite';
 
   constructor(
     private placesService: PlacesService,

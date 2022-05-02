@@ -67,7 +67,13 @@
   </ion-grid>
 
   <ion-grid *ngIf="segmentModel === 'map'">
-    <agm-map></agm-map>
+    <google-map
+      height="500px"
+      width="100%"
+      [zoom]="zoom"
+      [center]="center"
+      [options]="options"
+    ></google-map>
   </ion-grid>
 </ion-content>
 
